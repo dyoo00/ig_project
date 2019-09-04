@@ -23,7 +23,7 @@ import datetime
 # from instagram import client, subscriptions
 
 
-# grabs the n most recent posts with a given hashtag
+# grabs the most recent posts with a given hashtag
 def getHashtagEdge(hashtag):
     
     hashtagURL = "https://www.instagram.com/explore/tags/"+hashtag+"/?__a=1"
@@ -41,9 +41,6 @@ def getHashtagEdge(hashtag):
     return edgeDF
 
 
-# hashtagDF = pd.concat([pd.DataFrame.from_dict(x).transpose() for x in hashtagEdge['edges']])
-hashtagDF  = getHashtagEdge("kyliejenner")
-# pd.Series(hashtagDF.edge_liked_by.iloc[0])
 
 def getUserInfo(inputuser):
 
