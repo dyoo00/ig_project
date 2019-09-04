@@ -28,7 +28,8 @@ try:
     inputFile = pd.read_pickle(input_filePath)
     outputFile = pd.concat([inpuFile, hashtagDF])
 except:
-    pass
+    outputFile = hashtagDF
+    del hashtagDF
 
 # in case we pull duplicate posts, take the most recent version of the post--sort by likes in decreasing order 
 outputFile=outputFile.sort_values(['taken_at_timestamp','edge_liked_by'],ascending = False).drop_duplicates('id')
